@@ -1,0 +1,303 @@
+:root {
+  --light-grey: rgb(167, 167, 167);
+  --dirty-light-grey: rgb(177, 177, 177);
+  --normal-grey: rgb(146, 146, 146);
+  --dirty-grey: rgb(129, 129, 129);
+  --dirty-blue: rgb(18, 38, 56);
+  --normal-yellow: rgb(161, 151, 12);
+  --dirty-yellow: rgb(146, 138, 19);
+  --normal-red: rgb(139, 41, 11);
+  --dirty-red: rgb(128, 44, 18);
+  --burnt-orange: rgb(155, 58, 2);
+  --normal-black: rgb(0, 0, 0);
+}
+
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0, 0, 0, 0.975) 75%, rgba(0,0,0,0.45) 90%, rgb(156, 156, 156) 100%);
+}
+
+.title {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title > h1 {
+  font-size: 2.25rem;
+}
+
+.title > a {
+  font-size: 1.4rem;
+  color: white;
+}
+
+.frame {
+  width: 1000px;
+  height: 850px;
+  background: url(/assets/art-frame.svg) no-repeat center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outer-shadowbox {
+  width: 69%;
+  height: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 12px solid black;
+}
+
+.inner-shadowbox {
+  width: 72.5%;
+  height: 645px;
+  overflow-y: hidden;
+  border-radius: 0.75rem;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas {
+  width: 90%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: 1fr 0.75fr 1.72fr 1.25fr 1.45fr 0.45fr;
+  grid-template-rows: 0.2fr 1fr 1.33fr 1.9fr 1.2fr 1.2fr 1.5fr 0.5fr;
+  grid-template-areas:
+    "dirtyLightGreyArea1 dirtyGreyArea1      dirtyGreyArea1   dirtyGreyArea1 lightGreyArea1 lightGreyArea1"
+    "lightGreyArea2      blackArea1          blueArea1        blueArea1      lightGreyArea1 lightGreyArea1"
+    "lightGreyArea2      greyArea1           greyArea1        redArea1       blackArea2     blueArea2"
+    "lightGreyArea2      blackArea3          yellowArea1      blueArea3      redArea2       dirtyGreyArea2"
+    "greyArea2           dirtyLightGreyArea2 yellowArea1      blueArea3      redArea2       dirtyGreyArea2"
+    "greyArea2           dirtyLightGreyArea2 burntOrangeArea1 lightGreyArea3 yellowArea2    dirtyGreyArea2"
+    "greyArea2           dirtyLightGreyArea2 blackArea4       greyArea3      blueArea4      dirtyRedArea1"
+    "dirtyYellowArea1    dirtyYellowArea1    lightGreyArea4   lightGreyArea4 blackArea5     dirtyRedArea1"
+}
+
+div.canvas > * {
+  box-shadow: 5px 5px 10px black;
+}
+
+
+
+.black-1, .black-2, .black-3, .black-4, .black-5 {
+  background: var(--normal-black);
+  border: 1px solid black;
+}
+
+.black-1 {
+  grid-area: blackArea1;
+}
+
+.black-2 {
+  grid-area: blackArea2;
+}
+
+.black-3 {
+  grid-area: blackArea3;
+}
+
+.black-4 {
+  grid-area: blackArea4;
+}
+
+.black-5 {
+  grid-area: blackArea5;
+}
+
+
+
+.light-grey-1, .light-grey-2, .light-grey-3, .light-grey-4 {
+  background: var(--light-grey);
+  border: 1px solid black;
+}
+
+.light-grey-1 {
+  grid-area: lightGreyArea1;
+}
+
+.light-grey-2 {
+  grid-area: lightGreyArea2;
+}
+
+.light-grey-3 {
+  grid-area: lightGreyArea3;
+}
+
+.light-grey-4 {
+  grid-area: lightGreyArea4;
+}
+
+
+
+.dirty-light-grey-1, .dirty-light-grey-2 {
+  background: var(--dirty-light-grey);
+  border: 1px solid black;
+}
+
+.dirty-light-grey-1 {
+  grid-area: dirtyLightGreyArea1;
+}
+
+.dirty-light-grey-2 {
+  grid-area: dirtyLightGreyArea2;
+}
+
+
+
+.grey-1, .grey-2, .grey-3 {
+  background: var(--normal-grey);
+  border: 1px solid black;
+}
+
+.grey-1 {
+  grid-area: greyArea1;
+}
+
+.grey-2 {
+  grid-area: greyArea2;
+}
+
+.grey-3 {
+  grid-area: greyArea3;
+}
+
+
+
+.dirty-grey-1, .dirty-grey-2 {
+  background: var(--dirty-grey);
+  border: 1px solid black;
+}
+
+.dirty-grey-1 {
+  grid-area: dirtyGreyArea1;
+}
+
+.dirty-grey-2 {
+  grid-area: dirtyGreyArea2;
+}
+
+
+
+.blue-1, .blue-2, .blue-3, .blue-4 {
+  background: var(--dirty-blue);
+  border: 1px solid black;
+}
+
+.blue-1 {
+  grid-area: blueArea1;
+}
+
+.blue-2 {
+  grid-area: blueArea2;
+}
+
+.blue-3 {
+  grid-area: blueArea3;
+}
+
+.blue-4 {
+  grid-area: blueArea4;
+}
+
+
+
+.yellow-1, .yellow-2 {
+  background: var(--normal-yellow);
+  border: 1px solid black;
+}
+
+.yellow-1 {
+  grid-area: yellowArea1;
+}
+
+.yellow-2 {
+  grid-area: yellowArea2;
+}
+
+
+
+.dirty-yellow-1 {
+  grid-area: dirtyYellowArea1;
+  background: var(--dirty-yellow);
+  border: 1px solid black;
+}
+
+
+
+.red-1, .red-2 {
+  background: var(--normal-red);
+  border: 1px solid black;
+}
+
+.red-1 {
+  grid-area: redArea1;
+}
+
+.red-2 {
+  grid-area: redArea2;
+}
+
+
+
+.dirty-red-1 {
+  grid-area: dirtyRedArea1;
+  background: var(--dirty-red);
+  border: 1px solid black;
+}
+
+
+
+.burnt-orange-1 {
+  grid-area: burntOrangeArea1;
+  background: var(--burnt-orange);
+  border: 1px solid black;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .canvas {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(27, 1fr);
+    grid-template-areas:
+      "blackArea1"
+      "blackArea2"
+      "blackArea3"
+      "blackArea4"
+      "blackArea5"
+      "lightGreyArea1"
+      "lightGreyArea2"
+      "lightGreyArea3"
+      "lightGreyArea4"
+      "dirtyLightGreyArea1"
+      "dirtyLightGreyArea2"
+      "greyArea1"
+      "greyArea2"
+      "greyArea3"
+      "dirtyGreyArea1"
+      "dirtyGreyArea2"
+      "blueArea1"
+      "blueArea2"
+      "blueArea3"
+      "blueArea4"
+      "yellowArea1"
+      "yellowArea2"
+      "dirtyYellowArea1"
+      "redArea1"
+      "redArea2"
+      "dirtyRedArea1"
+      "burntOrangeArea1"
+  }
+}
